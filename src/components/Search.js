@@ -1,11 +1,11 @@
 import { useState } from "react"
 
-export const Search = ({characters}) => {
+export const Search = ({search, side}) => {
     const [input, setInput] = useState("");
 
-    const handleSearch = () => {
-        const character = characters.find(character => character.name === input);
-        console.log(character);
+    const handleSearch = (e) => {
+        e.preventDefault();
+        search(input, side)
     }
 
     return (

@@ -1,10 +1,16 @@
 import { Search } from "./Search"
+import { Random } from "./Random"
 
-export const NavBar = ({characters}) => {
+export const NavBar = ({allCharacters, search}) => {
     return (
         <div>
-            <p>Search</p>
-            <Search characters={characters}/>
+            <p>1er Character</p>
+            <Search search={search} allCharacters={allCharacters} side="left"/>
+            <Random side="left"/>
+
+            <p>2do Character</p>
+            <Search search={search} allCharacters={allCharacters} side="right"/>
+            <Random side="right"/>
         </div>
     )
 }
