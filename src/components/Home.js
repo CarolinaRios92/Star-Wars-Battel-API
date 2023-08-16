@@ -26,6 +26,20 @@ export const Home = () => {
         }
     }
 
+    const random = (side) => {
+        function getRandomId(max) {
+        return Math.floor(Math.random() * max);
+        }    
+        const idRandom = getRandomId(87);
+        const character = allCharacters.find(character => character.id === idRandom);
+        if(side === "left"){
+            setSelectedCharacters({...selectedCharacters, cardLeft: character});
+        }
+        if(side === "right"){
+            setSelectedCharacters({...selectedCharacters, cardRight: character});
+        }
+    }
+
     useEffect(() => {
         getAllCharacters();
     },[]);
@@ -33,7 +47,7 @@ export const Home = () => {
     return (
         <div>
             <h1>Star Wars Battle</h1>
-            <NavBar search={search} allCharacters={allCharacters}/>
+            <NavBar random={random} search={search} allCharacters={allCharacters}/>
             <Cards selectedCharacters={selectedCharacters}/>
             <List allCharacters={allCharacters}/>
         </div>

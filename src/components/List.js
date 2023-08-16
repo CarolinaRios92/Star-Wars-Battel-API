@@ -7,7 +7,7 @@ export const List = ({allCharacters}) => {
         <div>
             <p>List of Characters</p>
             <button
-                onClick={() => setShowNames(!showNames)}>Set Characters</button>
+                onClick={() => setShowNames(!showNames)}>Show all Characters</button>
                 {showNames && allCharacters.map(character => (
                     <p key={character.id}>{character.name}</p>
                 ))}

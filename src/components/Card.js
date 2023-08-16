@@ -8,22 +8,26 @@ export const Card = ({character}) => {
                     <img src={character.image} alt={character.name} />
                     <p>Name: {character.name}</p>
                     <p>Species: {character.species}</p>
-                    <p>Born: {character.born}</p>
-                    <p>Died: {character.died}</p>
-                    <p>Masters:</p>
-                    <ul>
-                        {character.masters.map(master => (
-                            <li key={master}>{master}</li>
-                        ))}
-                    </ul>
-                    <p>Apprentices:</p>
-                    <ul>
-                        {character.apprentices.map(apprentice => (
-                            <li key={apprentice}>{apprentice}</li>
-                        ))}
-                    </ul>
-
-
+                    {character.born && (<p>Born: {character.born}</p>)}
+                    {character.died && (<p>Died: {character.died}</p>)}
+                    {character.masters && (
+                        <div>
+                            <p>Masters:</p>
+                            <ul>
+                                {character.masters?.map(master => (
+                                    <li key={master}>{master}</li>
+                                ))}
+                            </ul>
+                        </div>)}
+                    {character.apprentices && (
+                        <div>
+                            <p>Apprentices:</p>
+                            <ul>
+                                {character.apprentices?.map(apprentice => (
+                                    <li key={apprentice}>{apprentice}</li>
+                                ))}
+                            </ul>
+                        </div>)}
                 </div>
                 
             )}
