@@ -1,36 +1,35 @@
 // El componente Card es un slide que muestra y oculta una card que contiene al menos 6 atributos del character, entre estos deben estar si o sí: image, name e id
+import logo from "../img/logo.png"
 
 export const Card = ({character}) => {
     return (
-        <div>
-            {character?.name && (
+        <div class="card text-bg-light border-warning min-size">
+                {!character && (
+                    <div class="empty-box">
+                        <img class="logo" src={logo} alt="star wars logo" />
+                        <p class="text-center text-bold pt-5 fs-5">Select a Character!</p>
+                    </div>
+                )}
+                {character?.name && (
                 <div>
-                    <img src={character.image} alt={character.name} />
-                    <p>Name: {character.name}</p>
-                    <p>Species: {character.species}</p>
-                    {character.born && (<p>Born: {character.born}</p>)}
-                    {character.died && (<p>Died: {character.died}</p>)}
-                    {character.masters && (
-                        <div>
-                            <p>Masters:</p>
-                            <ul>
-                                {character.masters?.map(master => (
-                                    <li key={master}>{master}</li>
-                                ))}
-                            </ul>
-                        </div>)}
-                    {character.apprentices && (
-                        <div>
-                            <p>Apprentices:</p>
-                            <ul>
-                                {character.apprentices?.map(apprentice => (
-                                    <li key={apprentice}>{apprentice}</li>
-                                ))}
-                            </ul>
-                        </div>)}
+                    <p class="card-header text-title">{character.name}</p>
+                    <div class="image-conteiner">
+                        <img 
+                        class="card-img-top image-character"
+                        src={character.image} 
+                        alt={character.name} />
+                    </div>
+                    
+                    <div class="card-body text-center">
+                        <p><b>Species:</b> <span class="text-capitalize">{character.species}</span></p>
+                        {character.homeworld && (<p><b>Home world: </b> <span class="text-capitalize">{character.homeworld}</span></p>)}
+                        {character.gender && (<p><b>Gender: </b> <span class="text-capitalize">{character.gender}</span></p>)}
+                        {character.born && (<p><b>Born: </b> {character.born}</p>)}
+                        {character.died && (<p><b>Died: </b> {character.died}</p>)}
+                        {character.mass && (<p><b>Mass: </b> {character.mass}</p>)}
+                    </div>
                 </div>
-                
-            )}
+                )}
         </div>
     )
 }

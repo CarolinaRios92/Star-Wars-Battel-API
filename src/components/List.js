@@ -5,11 +5,16 @@ export const List = ({allCharacters}) => {
 
     return (
         <div>
-            <p>List of Characters</p>
-            <button
-                onClick={() => setShowNames(!showNames)}>Show all Characters</button>
+            <p class="text-center fs-3 pt-5 text-color">List of Characters</p>
+            <div class="mx-auto width pb-3">
+                <button
+                class="btn btn-light border-warning text-bold mb-3"
+                onClick={() => setShowNames(!showNames)}>{showNames ? "Hide All Names" : "Show All Names"}</button>
+            </div>
                 {showNames && allCharacters.map(character => (
-                    <p key={character.id}>{character.name}</p>
+                    <p 
+                        class="text-center fs-5"
+                        key={character.id}>{character.name}</p>
                 ))}
         </div>
         

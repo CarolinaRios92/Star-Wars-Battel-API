@@ -9,12 +9,13 @@ export const Search = ({search, side}) => {
     }
 
     return (
-        <form onSubmit={handleSearch}>
+        <form class="row mb-2 gap-1 mt-0" onSubmit={handleSearch}>
             <input 
                 type="text"
                 value={input}
+                class="col-9"
                 onChange={(e) => setInput(e.target.value)}/>
-            <button type="submit">Find</button>
+            <button class="btn btn-warning btn-sm col text-bold" type="submit">Find</button>
         </form>
     )
 }
