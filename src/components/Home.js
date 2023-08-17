@@ -22,14 +22,14 @@ export const Home = () => {
         const selectedCharacter = allCharacters.find(character => character.name === characterName);
         if(side === "left"){
             if(selectedCharacter.name === selectedCharacters.cardRight.name){
-                alert("No podes seleccionar el mismo personaje");
+                alert("You can't select the same character");
                 return;
             }
             setSelectedCharacters({...selectedCharacters, cardLeft: selectedCharacter});
         }
         if(side === "right"){
             if(selectedCharacter.name === selectedCharacters.cardLeft.name){
-                alert("No podes seleccionar el mismo personaje");
+                alert("You can't select the same character");
                 return;
             }
             setSelectedCharacters({...selectedCharacters, cardRight: selectedCharacter});
@@ -44,14 +44,14 @@ export const Home = () => {
         const character = allCharacters.find(character => character.id === idRandom);
         if(side === "left"){
             if(character.name === selectedCharacters.cardRight.name){
-                alert("Salió el mismo Personaje, intentalo de nuevo.");
+                alert("The same Character came out, try again");
                 return;
             }
             setSelectedCharacters({...selectedCharacters, cardLeft: character});
         }
         if(side === "right"){
             if(character.name === selectedCharacters.cardLeft.name){
-                alert("Salió el mismo Personaje, intentalo de nuevo.");
+                alert("The same Character came out, try again");
                 return;
             }
             setSelectedCharacters({...selectedCharacters, cardRight: character});
