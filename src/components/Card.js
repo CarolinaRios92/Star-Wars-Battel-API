@@ -12,7 +12,7 @@ export const Card = ({character}) => {
                 )}
                 {character?.name && (
                 <div>
-                    <p class="card-header text-title">{character.name}</p>
+                    <p class="card-header text-title text-center">{character.name}</p>
                     <div class="image-conteiner">
                         <img 
                         class="card-img-top image-character"
