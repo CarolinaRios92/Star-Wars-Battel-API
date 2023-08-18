@@ -64,7 +64,7 @@ export const Home = () => {
 
     return (
         <div class="container-md">
-            <h1 class="h1-title">Star Wars Battle</h1>
+            <h1 class="d-none">Star Wars Battle</h1>
             <img class="image" src={starWars} alt="Star Wars Battle" />
             <NavBar random={random} search={search} allCharacters={allCharacters}/>
             <Cards selectedCharacters={selectedCharacters}/>

@@ -5,11 +5,11 @@ export const Cards = ({selectedCharacters}) => {
     const right = selectedCharacters.cardRight?.name ? selectedCharacters.cardRight : null;
 
     return (
-        <div class="row pt-3 gap-3 cards-conteiner">
-            <div class="col-12 col-md-6" >
+        <div class="d-flex flex-column flex-md-row justify-content-center mt-3 gap-4">
+            <div>
                 <Card character={left} />
             </div>
-            <div class="col">
+            <div>
                 <Card character={right}/>
             </div>
         </div>

@@ -16,16 +16,10 @@
     margin:initial;
     display: block;
     text-align: center;
-
 }
 
 .image-conteiner {
     height: 300px;
-}
-
-.h1-title {
-    visibility: hidden;
-    font-size: xx-small;
 }
 
 body {
@@ -65,20 +59,7 @@ body {
     text-transform: capitalize;
 }
 
-.width {
-    width: fit-content;
-}
-
-.empty-box {
-    height: 400px;
-    padding-top: 30%;
-}
-
 .min-size {
     min-height: 600px;
-}
-
-.cards-conteiner {
-    width: 90%;
-    margin: auto;
+    width: 300px;
 }

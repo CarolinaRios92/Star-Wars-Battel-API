@@ -5,9 +5,9 @@ export const Card = ({character}) => {
     return (
         <div class="card text-bg-light border-warning min-size">
                 {!character && (
-                    <div class="empty-box">
-                        <img class="logo" src={logo} alt="star wars logo" />
-                        <p class="text-center text-bold pt-5 fs-5">Select a Character!</p>
+                    <div class="min-size d-flex justify-content-center flex-column gap-2">
+                        <img class="w-50 mx-auto" src={logo} alt="star wars logo" />
+                        <p class="text-center text-bold fs-5">Select a Character!</p>
                     </div>
                 )}
                 {character?.name && (

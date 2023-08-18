@@ -6,7 +6,7 @@ export const List = ({allCharacters}) => {
     return (
         <div>
             <p class="text-center fs-3 pt-5 text-color">List of Characters</p>
-            <div class="mx-auto width pb-3">
+            <div class="d-flex justify-content-center pb-3">
                 <button
                 class="btn btn-light border-warning text-bold mb-3"
                 onClick={() => setShowNames(!showNames)}>{showNames ? "Hide All Names" : "Show All Names"}</button>
